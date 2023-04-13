@@ -18,11 +18,20 @@ public class PlatformingAgent : Agent
 	private Vector3 myVelocity = Vector3.zero;
 
     [Header("Motion")]
-    [SerializeField] private float maxJumpHeight;
-    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float maxJumpHeight = 4f;
+    [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private float movementSmoothing = .05f;
 
+    [Header("Visuals")]
+    [SerializeField] private SpriteRenderer sprite;
+
     //ML Stuff
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        sensor.AddObservation(transform.position);
+        sensor.AddObservation(enemy.transform.position);
+    }
+
     public override void OnActionReceived(ActionBuffers actions)
     {
         //Collect actions
@@ -70,7 +79,6 @@ public class PlatformingAgent : Agent
 
     private void Jump(float strength){
         if(isGrounded()){
-            Debug.Log(strength);
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Sqrt(-2.0f * Physics2D.gravity.y * (maxJumpHeight*strength)));
             //rb.velocity = new Vector2(rb.velocity.x, 10f * strength);
         }
@@ -93,10 +101,7 @@ public class PlatformingAgent : Agent
 		// Switch the way the player is labelled as facing.
 		facingRight = !facingRight;
 
-		// Multiply the player's x local scale by -1.
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+		sprite.flipX = !sprite.flipX;
 	}
 
 }
