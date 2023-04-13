@@ -22,10 +22,20 @@ public class PlatformingAgent : Agent
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private float movementSmoothing = .05f;
 
+    [Header("Episode")]
+    public Vector3 startPosition;
+
     [Header("Visuals")]
     [SerializeField] private SpriteRenderer sprite;
+    public Color winColor;
+    public SpriteRenderer background;
 
     //ML Stuff
+    public override void OnEpisodeBegin()
+    {   
+        transform.localPosition = startPosition;
+    }
+    
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.position);

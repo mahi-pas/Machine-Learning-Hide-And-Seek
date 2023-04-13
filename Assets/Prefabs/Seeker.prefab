@@ -203,7 +203,10 @@ MonoBehaviour:
   maxJumpHeight: 4
   moveSpeed: 6
   movementSmoothing: 0.05
+  startPosition: {x: 0, y: 0, z: 0}
   sprite: {fileID: 3768572693544332199}
+  winColor: {r: 0.7254902, g: 0.27058825, b: 0.1137255, a: 1}
+  background: {fileID: 0}
 --- !u!114 &6921170691053630630
 MonoBehaviour:
   m_ObjectHideFlags: 0
