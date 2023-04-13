@@ -38,9 +38,7 @@ public class PlatformingAgent : Agent
     {
         ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
         continuousActions[0] = Input.GetAxisRaw("Horizontal");
-        if(Input.GetButtonDown("Jump")){
-            continuousActions[1] = 1f;
-        }
+        continuousActions[1] = Input.GetAxisRaw("Vertical");
         
     }
 
@@ -54,6 +52,7 @@ public class PlatformingAgent : Agent
         Vector3 targetVelocity = new Vector2(dir * moveSpeed, rb.velocity.y);
         // And then smoothing it out and applying it to the character
         rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref myVelocity, movementSmoothing);
+        //transform.position += new Vector3(dir * moveSpeed * Time.deltaTime, rb.velocity.y,0);
 
         // If the input is moving the player right and the player is facing left...
         if (dir > 0 && !facingRight)
@@ -71,7 +70,9 @@ public class PlatformingAgent : Agent
 
     private void Jump(float strength){
         if(isGrounded()){
-            rb.AddForce(new Vector2(0f, Mathf.Sqrt(-2.0f * Physics2D.gravity.y * maxJumpHeight) * strength));
+            Debug.Log(strength);
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Sqrt(-2.0f * Physics2D.gravity.y * (maxJumpHeight*strength)));
+            //rb.velocity = new Vector2(rb.velocity.x, 10f * strength);
         }
     }
 
