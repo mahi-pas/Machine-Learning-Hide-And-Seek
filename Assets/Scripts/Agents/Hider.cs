@@ -12,6 +12,7 @@ public class Hider : PlatformingAgent
 
     [Header("Hider")]
     public Transform goal;
+    [SerializeField] List<Vector3> goalLocations;
 
     public override void Awake() {
         base.Awake();
@@ -26,6 +27,7 @@ public class Hider : PlatformingAgent
         }
         found = false;
         goalsReached = 0;
+        MoveGoal();
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -37,18 +39,27 @@ public class Hider : PlatformingAgent
     private void OnCollisionEnter2D(Collision2D other) {
         if( other.gameObject.tag == "Seeker"){
             found = true;
-            AddReward(-100f);
+            SetReward(-100f);
             EndEpisode();
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.tag == "Goal"){
             goalsReached+=1;
             if(goalsReached == 5){
                 AddReward(100f);
+                background.color = winColor;
                 EndEpisode();
             }
             else{
-                AddReward(10f);
+                AddReward(50f);
+                MoveGoal();
             }
         }
+    }
+
+    private void MoveGoal(){
+        goal.transform.localPosition = goalLocations[Random.Range(0, goalLocations.Count)];
     }
 }

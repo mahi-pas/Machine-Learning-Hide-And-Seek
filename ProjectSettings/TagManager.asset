@@ -7,6 +7,7 @@ TagManager:
   - Seeker
   - Hider
   - Wall
+  - Goal
   layers:
   - Default
   - TransparentFX

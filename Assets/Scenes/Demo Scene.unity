@@ -217,7 +217,7 @@ PrefabInstance:
     - target: {fileID: 785340664499332855, guid: 15ceb46e7873b284091a5735174aae52, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4d9e40054b08a17428a69aaddc9d117e, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 8f62738f92edf3744a8b2f67874db807, type: 3}
     - target: {fileID: 4305800225874548958, guid: 15ceb46e7873b284091a5735174aae52, type: 3}
       propertyPath: m_Name
       value: Environment
@@ -269,6 +269,6 @@ PrefabInstance:
     - target: {fileID: 4522619799863458646, guid: 15ceb46e7873b284091a5735174aae52, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 3d1511b77fcb7b3499ae184f4b56bb27, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: f25f6158836ffeb409bbdf203aefb3ea, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15ceb46e7873b284091a5735174aae52, type: 3}

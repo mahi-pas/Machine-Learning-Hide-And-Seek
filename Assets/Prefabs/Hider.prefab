@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 6
+    VectorObservationSize: 9
     NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 2
@@ -199,13 +199,18 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
-  maxJumpHeight: 4
+  maxJumpHeight: 6
   moveSpeed: 6
   movementSmoothing: 0.05
-  startPosition: {x: 0, y: 0, z: 0}
+  startPosition:
+  - {x: 1.1919441, y: 5.34e-43, z: 0.0000000107223075}
+  - {x: 0.00000021176753, y: 1.0769908e+20, z: 5.3e-43}
+  - {x: 4.6e-44, y: 5.324101e+22, z: 1.1919441}
   sprite: {fileID: 5833057207400740319}
   winColor: {r: 0.47058827, g: 0.3921569, b: 0.77647066, a: 1}
   background: {fileID: 0}
+  goal: {fileID: 0}
+  goalLocations: []
 --- !u!114 &2062849708998734558
 MonoBehaviour:
   m_ObjectHideFlags: 0
