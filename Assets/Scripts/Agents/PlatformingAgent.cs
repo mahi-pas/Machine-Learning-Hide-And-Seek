@@ -23,7 +23,7 @@ public class PlatformingAgent : Agent
     [SerializeField] private float movementSmoothing = .05f;
 
     [Header("Episode")]
-    public Vector3 startPosition;
+    public List<Vector3> startPosition;
 
     [Header("Visuals")]
     [SerializeField] private SpriteRenderer sprite;
@@ -33,9 +33,9 @@ public class PlatformingAgent : Agent
     //ML Stuff
     public override void OnEpisodeBegin()
     {   
-        transform.localPosition = startPosition;
+        transform.localPosition = startPosition[Random.Range(0, startPosition.Count)];
     }
-    
+
     public override void CollectObservations(VectorSensor sensor)
     {
         sensor.AddObservation(transform.position);
