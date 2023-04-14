@@ -151,7 +151,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 5356238ccaf548f488ee89a2f1c03f72, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &3836587068994514507
 BoxCollider2D:
@@ -203,7 +203,11 @@ MonoBehaviour:
   maxJumpHeight: 4
   moveSpeed: 6
   movementSmoothing: 0.05
-  startPosition: {x: 0, y: 0, z: 0}
+  startPosition:
+  - {x: NaN, y: 5.32e-43, z: 2.0336551e+20}
+  - {x: 0.00000016799963, y: -1.3561088e-19, z: 5.32e-43}
+  - {x: 4.6e-44, y: 0.00000016986883, z: NaN}
+  epCntl: {fileID: 0}
   sprite: {fileID: 3768572693544332199}
   winColor: {r: 0.7254902, g: 0.27058825, b: 0.1137255, a: 1}
   background: {fileID: 0}

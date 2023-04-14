@@ -8,9 +8,11 @@ using Unity.MLAgents.Sensors;
 public class PlatformingAgent : Agent
 {
     [Header("Senses")]
-    [SerializeField] private Transform enemy;
+    public Transform enemy;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
+
+    public float closestDistance;
 
     const float groundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private Rigidbody2D rb;
@@ -24,6 +26,7 @@ public class PlatformingAgent : Agent
 
     [Header("Episode")]
     public List<Vector3> startPosition;
+    public EpisodeController epCntl;
 
     [Header("Visuals")]
     [SerializeField] private SpriteRenderer sprite;
@@ -65,6 +68,7 @@ public class PlatformingAgent : Agent
     //Platforming Stuff
     public virtual void Awake() {
         rb = GetComponent<Rigidbody2D>();
+        epCntl.AddAgent(this);
     }
 
     private void MoveX(float dir){

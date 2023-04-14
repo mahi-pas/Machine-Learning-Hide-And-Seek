@@ -49,6 +49,7 @@ MonoBehaviour:
   - Untagged
   - Wall
   - Hider
+  - Goal
   m_RaysPerDirection: 3
   m_MaxRayDegrees: 43
   m_SphereCastRadius: 0
@@ -146,7 +147,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 5356238ccaf548f488ee89a2f1c03f72, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &6064507573843607820
 MonoBehaviour:
@@ -162,7 +163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BrainParameters:
     VectorObservationSize: 9
-    NumStackedVectorObservations: 1
+    NumStackedVectorObservations: 2
     m_ActionSpec:
       m_NumContinuousActions: 2
       BranchSizes: 
@@ -199,6 +200,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  closestDistance: 0
   maxJumpHeight: 6
   moveSpeed: 6
   movementSmoothing: 0.05
@@ -206,6 +208,7 @@ MonoBehaviour:
   - {x: 1.1919441, y: 5.34e-43, z: 0.0000000107223075}
   - {x: 0.00000021176753, y: 1.0769908e+20, z: 5.3e-43}
   - {x: 4.6e-44, y: 5.324101e+22, z: 1.1919441}
+  epCntl: {fileID: 0}
   sprite: {fileID: 5833057207400740319}
   winColor: {r: 0.47058827, g: 0.3921569, b: 0.77647066, a: 1}
   background: {fileID: 0}
@@ -358,6 +361,7 @@ MonoBehaviour:
   - Untagged
   - Wall
   - Hider
+  - Goal
   m_RaysPerDirection: 3
   m_MaxRayDegrees: 43
   m_SphereCastRadius: 0
@@ -417,6 +421,7 @@ MonoBehaviour:
   - Untagged
   - Wall
   - Hider
+  - Goal
   m_RaysPerDirection: 3
   m_MaxRayDegrees: 43
   m_SphereCastRadius: 0
@@ -476,6 +481,7 @@ MonoBehaviour:
   - Untagged
   - Wall
   - Hider
+  - Goal
   m_RaysPerDirection: 3
   m_MaxRayDegrees: 43
   m_SphereCastRadius: 0

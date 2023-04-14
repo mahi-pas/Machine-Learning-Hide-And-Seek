@@ -36,6 +36,17 @@ public class Hider : PlatformingAgent
         sensor.AddObservation(goal.transform.position);
     }
 
+    public override void OnActionReceived(ActionBuffers actions)
+    {
+        base.OnActionReceived(actions);
+        float newDistance = Vector2.Distance(transform.position,goal.transform.position);
+        if(newDistance < closestDistance){
+            AddReward(0.01f);
+            //Debug.Log("Hider: Reward + 0.01f");
+            closestDistance = newDistance;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D other) {
         if( other.gameObject.tag == "Seeker"){
             found = true;
@@ -50,7 +61,7 @@ public class Hider : PlatformingAgent
             if(goalsReached == 5){
                 AddReward(100f);
                 background.color = winColor;
-                EndEpisode();
+                epCntl.EndEpisode(); //use episode controller to end episode for all agents
             }
             else{
                 AddReward(50f);
@@ -61,5 +72,6 @@ public class Hider : PlatformingAgent
 
     private void MoveGoal(){
         goal.transform.localPosition = goalLocations[Random.Range(0, goalLocations.Count)];
+        closestDistance = Vector2.Distance(transform.position,goal.transform.position);
     }
 }
