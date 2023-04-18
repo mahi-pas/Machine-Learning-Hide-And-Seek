@@ -147,7 +147,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 5356238ccaf548f488ee89a2f1c03f72, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -200,6 +200,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  closestDistance: 0
   maxJumpHeight: 4
   moveSpeed: 6
   movementSmoothing: 0.05
@@ -211,6 +212,9 @@ MonoBehaviour:
   sprite: {fileID: 3768572693544332199}
   winColor: {r: 0.7254902, g: 0.27058825, b: 0.1137255, a: 1}
   background: {fileID: 0}
+  timeSinceGoal: 0
+  additionalReward: 40
+  goal: {fileID: 0}
 --- !u!114 &6921170691053630630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,8 +228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BrainParameters:
-    VectorObservationSize: 6
-    NumStackedVectorObservations: 2
+    VectorObservationSize: 9
+    NumStackedVectorObservations: 1
     m_ActionSpec:
       m_NumContinuousActions: 2
       BranchSizes: 

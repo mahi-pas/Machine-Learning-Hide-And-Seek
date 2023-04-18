@@ -5,8 +5,9 @@ using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 
-public class Seeker : PlatformingAgent
+public class Seeker : MovementAgent
 {
+    public Transform goal;
 
     public override void OnEpisodeBegin()
     {   
@@ -14,20 +15,16 @@ public class Seeker : PlatformingAgent
         closestDistance = Vector2.Distance(transform.position,enemy.transform.position);
     }
 
-    public override void OnActionReceived(ActionBuffers actions)
+    public override void CollectObservations(VectorSensor sensor)
     {
-        base.OnActionReceived(actions);
-        float newDistance = Vector2.Distance(transform.position,enemy.transform.position);
-        if(newDistance < closestDistance){
-            AddReward(0.01f);
-            //Debug.Log("Seeker: Reward + 0.01f");
-            closestDistance = newDistance;
-        }
+        base.CollectObservations(sensor);
+        sensor.AddObservation(goal.transform.position);
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if( other.gameObject.tag == "Hider"){
-            AddReward(100f);
+            Debug.Log("Seeker: End Episode");
+            AddReward(100f + CalculateAdditionalReward());
             background.color = winColor;
             EndEpisode();
         }

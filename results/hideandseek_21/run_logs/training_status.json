@@ -1,0 +1,69 @@
+{
+    "Hide": {
+        "checkpoints": [
+            {
+                "steps": 499988,
+                "file_path": "results\\hideandseek_21\\Hide\\Hide-499988.onnx",
+                "reward": 0.0,
+                "creation_time": 1681798364.9122074,
+                "auxillary_file_paths": [
+                    "results\\hideandseek_21\\Hide\\Hide-499988.pt"
+                ]
+            },
+            {
+                "steps": 500052,
+                "file_path": "results\\hideandseek_21\\Hide\\Hide-500052.onnx",
+                "reward": 0.0,
+                "creation_time": 1681798365.1237953,
+                "auxillary_file_paths": [
+                    "results\\hideandseek_21\\Hide\\Hide-500052.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500052,
+            "file_path": "results\\hideandseek_21\\Hide.onnx",
+            "reward": 0.0,
+            "creation_time": 1681798365.1237953,
+            "auxillary_file_paths": [
+                "results\\hideandseek_21\\Hide\\Hide-500052.pt"
+            ]
+        }
+    },
+    "Seek": {
+        "checkpoints": [
+            {
+                "steps": 499988,
+                "file_path": "results\\hideandseek_21\\Seek\\Seek-499988.onnx",
+                "reward": 0.0,
+                "creation_time": 1681798365.0182517,
+                "auxillary_file_paths": [
+                    "results\\hideandseek_21\\Seek\\Seek-499988.pt"
+                ]
+            },
+            {
+                "steps": 500052,
+                "file_path": "results\\hideandseek_21\\Seek\\Seek-500052.onnx",
+                "reward": 0.0,
+                "creation_time": 1681798365.2177813,
+                "auxillary_file_paths": [
+                    "results\\hideandseek_21\\Seek\\Seek-500052.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500052,
+            "file_path": "results\\hideandseek_21\\Seek.onnx",
+            "reward": 0.0,
+            "creation_time": 1681798365.2177813,
+            "auxillary_file_paths": [
+                "results\\hideandseek_21\\Seek\\Seek-500052.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.29.0",
+        "torch_version": "1.13.1+cu117"
+    }
+}
