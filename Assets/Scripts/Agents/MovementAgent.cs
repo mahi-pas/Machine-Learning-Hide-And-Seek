@@ -63,10 +63,11 @@ public class MovementAgent : Agent
         float moveY = actions.ContinuousActions[1];
 
         //Now move
-        MoveX(moveX);
+        //MoveX(moveX);
         //Jump(jumpStrength);
-        MoveY(moveY);
-
+        //MoveY(moveY);
+        transform.position += new Vector3(moveX, moveY, 0) * Time.deltaTime * moveSpeed;
+        
         //iterate timesincegoal
         timeSinceGoal += Time.deltaTime;
     }

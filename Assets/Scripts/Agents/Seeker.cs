@@ -23,7 +23,6 @@ public class Seeker : MovementAgent
 
     private void OnCollisionEnter2D(Collision2D other) {
         if( other.gameObject.tag == "Hider"){
-            Debug.Log("Seeker: End Episode");
             AddReward(100f + CalculateAdditionalReward());
             background.color = winColor;
             EndEpisode();

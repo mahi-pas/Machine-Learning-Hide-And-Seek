@@ -217,7 +217,7 @@ PrefabInstance:
     - target: {fileID: 785340664499332855, guid: 15ceb46e7873b284091a5735174aae52, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 587c3a9ca9449c2438933d8e4de91707, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: baff449726742bb44b6124c430f6df34, type: 3}
     - target: {fileID: 4305800225874548958, guid: 15ceb46e7873b284091a5735174aae52, type: 3}
       propertyPath: m_Name
       value: Environment
@@ -269,7 +269,7 @@ PrefabInstance:
     - target: {fileID: 4522619799863458646, guid: 15ceb46e7873b284091a5735174aae52, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 8e53052ab5d023c4aa6a4b1219517317, type: 3}
+      objectReference: {fileID: 5022602860645237092, guid: 2ace23b990d16b6438ec5032d47524dd, type: 3}
     - target: {fileID: 4522619799863458646, guid: 15ceb46e7873b284091a5735174aae52, type: 3}
       propertyPath: m_BehaviorType
       value: 0

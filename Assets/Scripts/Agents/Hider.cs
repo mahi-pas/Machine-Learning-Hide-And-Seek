@@ -39,7 +39,6 @@ public class Hider : MovementAgent
 
     private void OnCollisionEnter2D(Collision2D other) {
         if( other.gameObject.tag == "Seeker"){
-            Debug.Log("Hider: End Episode");
             found = true;
             SetReward(-100f);
             EndEpisode();
@@ -47,6 +46,7 @@ public class Hider : MovementAgent
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+        /*
         if(other.gameObject.tag == "Goal"){
             goalsReached+=1;
             if(goalsReached >= goalsNeeded){
@@ -59,6 +59,7 @@ public class Hider : MovementAgent
                 MoveGoal();
             }
         }
+        */
     }
 
     private void MoveGoal(){

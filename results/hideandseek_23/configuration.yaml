@@ -104,8 +104,8 @@ engine_settings:
   no_graphics: false
 environment_parameters: null
 checkpoint_settings:
-  run_id: hideandseek_22
-  initialize_from: hideandseek_21
+  run_id: hideandseek_23
+  initialize_from: null
   load_model: false
   resume: false
   force: true

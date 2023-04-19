@@ -1,6 +1,6 @@
 default_settings: null
 behaviors:
-  Hide:
+  Seek:
     trainer_type: ppo
     hyperparameters:
       batch_size: 1024
@@ -42,7 +42,7 @@ behaviors:
     threaded: false
     self_play: null
     behavioral_cloning: null
-  Seek:
+  Hide:
     trainer_type: ppo
     hyperparameters:
       batch_size: 1024
@@ -104,11 +104,11 @@ engine_settings:
   no_graphics: false
 environment_parameters: null
 checkpoint_settings:
-  run_id: hideandseek_22
-  initialize_from: hideandseek_21
+  run_id: hideandseek_24
+  initialize_from: null
   load_model: false
   resume: false
-  force: true
+  force: false
   train_model: false
   inference: false
   results_dir: results
